@@ -29,4 +29,8 @@ public class Cappuccino {
     public static ActionClearText actionClearField() {
         return new ActionClearText();
     }
+
+    public static ActionSwipeLeft actionSwipeLeft(){
+        return new ActionSwipeLef();
+    }
 }
