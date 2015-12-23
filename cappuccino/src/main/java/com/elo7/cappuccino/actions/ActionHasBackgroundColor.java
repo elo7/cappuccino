@@ -4,6 +4,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.IdRes;
 import android.view.ViewGroup;
 
+import com.elo7.cappuccino.matchers.DelayedMatcher;
 import com.elo7.cappuccino.matchers.ColorMatcher;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -13,7 +14,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class ActionHasBackgroundColor extends AbstractAction {
+public class ActionHasBackgroundColor extends DelayedMatcher {
 
     private int mResId;
     private int mColorId;
@@ -36,7 +37,7 @@ public class ActionHasBackgroundColor extends AbstractAction {
 
     @Override
     public void perform() {
-        actionDelay();
+        super.perform();
 
         onView(allOf(withId(mResId), withParent(withId(mParentId))))
                 .check(matches(new ColorMatcher(equalTo(mColorId), ViewGroup.class)));

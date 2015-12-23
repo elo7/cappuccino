@@ -1,13 +1,15 @@
 package com.elo7.cappuccino.actions;
 import android.support.annotation.IdRes;
 
+import com.elo7.cappuccino.matchers.DelayedMatcher;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 
-public final class ActionExist extends AbstractAction {
+public final class ActionExist extends DelayedMatcher {
     private int mViewId;
     private String mText;
 
@@ -23,7 +25,7 @@ public final class ActionExist extends AbstractAction {
 
     @Override
     public void perform() {
-        actionDelay();
+        super.perform();
 
         if (mText != null && mViewId == 0) {
             onView(android.support.test.espresso.matcher.ViewMatchers.withText(mText)).check(matches(isDisplayed()));

@@ -24,7 +24,7 @@ android {
     }
 }
 
-
+group = "com.elo7.cappuccino"
 
 dependencies {
     compile 'com.android.support.test.espresso:espresso-core:2.2.1'

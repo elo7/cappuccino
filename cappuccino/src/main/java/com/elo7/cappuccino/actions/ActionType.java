@@ -2,12 +2,14 @@ package com.elo7.cappuccino.actions;
 
 import android.support.annotation.IdRes;
 
+import com.elo7.cappuccino.matchers.DelayedMatcher;
+
 import static android.support.test.espresso.Espresso.closeSoftKeyboard;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
-public class ActionType extends AbstractAction {
+public class ActionType extends DelayedMatcher {
     private int mViewId;
     private String mText;
 
@@ -23,7 +25,7 @@ public class ActionType extends AbstractAction {
 
     @Override
     public void perform() {
-        actionDelay();
+        super.perform();
 
         new ActionClearText().inView(mViewId).perform();
         onView(withId(mViewId)).perform(typeText(mText));

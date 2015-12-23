@@ -1,11 +1,9 @@
-package com.elo7.cappuccino.actions;
+package com.elo7.cappuccino.matchers;
 
-public abstract class AbstractAction {
+public class DelayedMatcher {
     protected long mDelayTime;
 
-    public abstract void perform();
-
-    public AbstractAction withDelay(long delayTime) {
+    public DelayedMatcher withDelay(long delayTime) {
         this.mDelayTime = delayTime;
         return this;
     }
@@ -18,5 +16,9 @@ public abstract class AbstractAction {
                 e.printStackTrace();
             }
         }
+    }
+
+    protected void perform() {
+        actionDelay();
     }
 }
