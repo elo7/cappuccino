@@ -12,6 +12,4 @@ allprojects {
         jcenter()
         mavenLocal()
     }
-
-    group = "com.elo7.cappuccinno"
 }
