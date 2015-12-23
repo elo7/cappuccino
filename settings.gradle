@@ -1,1 +1,1 @@
-include ':cappuccinno'
+include ':cappuccino-test', ':cappuccino'
