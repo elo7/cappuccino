@@ -1,7 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'net.researchgate.release'
 
 android {
     compileSdkVersion 23
@@ -10,50 +7,14 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
     }
 
-    lintOptions {
-        abortOnError false
-    }
-
-    sourceSets {
-        main {
-            java {
-                srcDir 'src'
-            }
-        }
-    }
-
-    repositories {
-        mavenCentral()
-
-        maven {
-            url "${artifactory_url}/libs-release-local"
-            credentials {
-                username artifactory_user
-                password artifactory_password
-            }
-        }
-
-        jcenter()
-    }
-}
-
-uploadArchives {
-    configuration = configurations.archives
-
-    repositories {
-        mavenDeployer {
-            repository(url: "${artifactory_url}/libs-release-local") {
-                authentication(userName: artifactory_user, password: artifactory_password)
-            }
+    android {
+        lintOptions {
+            abortOnError false
         }
     }
 }
-
-group = "com.elo7.cappuccino"
 
 dependencies {
     compile 'com.android.support.test.espresso:espresso-core:2.2.1'
@@ -62,6 +23,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-v4'
     }
     compile "com.android.support:support-v4:23+"
+
 }
 
-afterReleaseBuild.dependsOn uploadArchives
