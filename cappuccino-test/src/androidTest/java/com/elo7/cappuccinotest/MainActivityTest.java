@@ -16,9 +16,6 @@ import org.junit.runner.RunWith;
 
 import static com.elo7.cappuccino.Cappuccino.actionHasText;
 
-/**
- * Created by Developer on 12/22/15.
- */
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest extends ActivityTestCase {
 
@@ -50,7 +47,7 @@ public class MainActivityTest extends ActivityTestCase {
 
     @Test
     public void testSomeAction() {
-        actionHasText(mActivityRule.getActivity().getString(R.string.hello_world)).perform();
+        actionHasText(mActivityRule.getActivity().getString(R.string.hello_world)).withDelay(1000).perform();
     }
 
 }

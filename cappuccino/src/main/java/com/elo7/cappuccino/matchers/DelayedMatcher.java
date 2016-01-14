@@ -1,6 +1,8 @@
 package com.elo7.cappuccino.matchers;
 
-public class DelayedMatcher {
+import com.elo7.cappuccino.interfaces.OnActionListener;
+
+public class DelayedMatcher implements OnActionListener {
     protected long mDelayTime;
 
     public DelayedMatcher withDelay(long delayTime) {
@@ -18,7 +20,8 @@ public class DelayedMatcher {
         }
     }
 
-    protected void perform() {
+    @Override
+    public void perform() {
         actionDelay();
     }
 }
