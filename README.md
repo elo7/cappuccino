@@ -12,6 +12,7 @@ Writing interface tests using Espresso is not an easy task. Cappuccino was born 
     onView(withId(R.id.view_id)).perform(clearText());
     ```
 * With Cappuccino:
+
     ```
     actionHasText("Hello World!").perform();
     actionClick().inView(R.id.view_id).perform();
@@ -30,6 +31,7 @@ actionClick().inView(R.id.view_id).withDelay(1000).perform();
 ```
 androidTestCompile 'com.elo7.cappuccino:cappuccino:0.2'
 ```
+
 Feel free to submit a pull request with more awesome actions :)
 
 # License 
