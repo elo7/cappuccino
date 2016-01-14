@@ -9,6 +9,7 @@ import com.elo7.cappuccino.actions.ActionClearText;
 import com.elo7.cappuccino.actions.ActionClick;
 import com.elo7.cappuccino.actions.ActionExist;
 import com.elo7.cappuccino.actions.ActionHasBackgroundColor;
+import com.elo7.cappuccino.actions.ActionScrollRecyclerView;
 import com.elo7.cappuccino.actions.ActionSwipeLeft;
 import com.elo7.cappuccino.actions.ActionSwipeRight;
 import com.elo7.cappuccino.actions.ActionType;
@@ -47,8 +48,12 @@ public class Cappuccino {
         return new ActionSwipeRight();
     }
 
-    public static ActionHasBackgroundColor actiobHasBackgroundColor() {
+    public static ActionHasBackgroundColor actionHasBackgroundColor() {
         return new ActionHasBackgroundColor();
+    }
+
+    public static ActionScrollRecyclerView actionScrollRecyclerView() {
+        return new ActionScrollRecyclerView();
     }
 
     public static void registerViewPagerIdlingResource(final ViewPager viewPager) {

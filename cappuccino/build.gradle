@@ -57,6 +57,10 @@ group = "com.elo7.cappuccino"
 
 dependencies {
     compile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    compile('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
     compile "com.android.support:support-v4:23+"
 }
 
