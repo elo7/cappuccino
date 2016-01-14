@@ -14,8 +14,8 @@ Writing interface tests using Espresso is not an easy task. Cappuccino was born 
 * With Cappuccino:
 
     ```
-    actionHasText("Hello World!").perform();
     actionClick().inView(R.id.view_id).perform();
+    actionHasText("Hello World!").perform();
     actionClearField().inView(R.id.view_id).perform();
     ```
 
@@ -25,14 +25,46 @@ You can also set a delay time before the Cappuccino perform the action, like:
 actionClick().inView(R.id.view_id).withDelay(1000).perform();
 ```
 
-
-# Download 
+And more...
 
 ```
-androidTestCompile 'com.elo7.cappuccino:cappuccino:0.2'
+actionType(); 
+actionExist(); 
+actionSwipeLeft();
+actionSwipeRight();
+actionHasBackgroundColor(); 
+actionScrollRecyclerView();
+```
+
+# Usage
+ 
+Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+    
+Then add the dependency
+
+```
+dependencies {
+        androidTestCompile 'com.github.elo7:cappuccino:0.2'
+}
 ```
 
 Feel free to submit a pull request with more awesome actions :)
+
+# Contribute
+
+* If you **found a bug**, open an issue.
+* If you **have a feature request**, open an issue.
+* If you **want to contribute**, submit a pull request
+
 
 # License 
 ```
