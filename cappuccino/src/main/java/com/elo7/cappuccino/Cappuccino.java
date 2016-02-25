@@ -10,6 +10,7 @@ import com.elo7.cappuccino.actions.ActionClick;
 import com.elo7.cappuccino.actions.ActionDrawer;
 import com.elo7.cappuccino.actions.ActionExist;
 import com.elo7.cappuccino.actions.ActionHasBackgroundColor;
+import com.elo7.cappuccino.actions.ActionRecyclerView;
 import com.elo7.cappuccino.actions.ActionScrollRecyclerView;
 import com.elo7.cappuccino.actions.ActionSearchView;
 import com.elo7.cappuccino.actions.ActionSwipeLeft;
@@ -60,6 +61,10 @@ public class Cappuccino {
 
     public static ActionSearchView actionSearchView() {
         return new ActionSearchView();
+    }
+
+    public static ActionRecyclerView actionClickItemInRecyclerView() {
+        return new ActionRecyclerView();
     }
 
     public static ActionDrawer actionOpenNavigationView(){
