@@ -10,6 +10,7 @@ import com.elo7.cappuccino.actions.ActionClick;
 import com.elo7.cappuccino.actions.ActionExist;
 import com.elo7.cappuccino.actions.ActionHasBackgroundColor;
 import com.elo7.cappuccino.actions.ActionScrollRecyclerView;
+import com.elo7.cappuccino.actions.ActionSearchView;
 import com.elo7.cappuccino.actions.ActionSwipeLeft;
 import com.elo7.cappuccino.actions.ActionSwipeRight;
 import com.elo7.cappuccino.actions.ActionType;
@@ -54,6 +55,10 @@ public class Cappuccino {
 
     public static ActionScrollRecyclerView actionScrollRecyclerView() {
         return new ActionScrollRecyclerView();
+    }
+
+    public static ActionSearchView actionSearchView() {
+        return new ActionSearchView();
     }
 
     public static void registerViewPagerIdlingResource(final ViewPager viewPager) {
