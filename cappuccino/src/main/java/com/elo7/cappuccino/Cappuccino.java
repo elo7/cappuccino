@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 
 import com.elo7.cappuccino.actions.ActionClearText;
 import com.elo7.cappuccino.actions.ActionClick;
+import com.elo7.cappuccino.actions.ActionDrawer;
 import com.elo7.cappuccino.actions.ActionExist;
 import com.elo7.cappuccino.actions.ActionHasBackgroundColor;
 import com.elo7.cappuccino.actions.ActionScrollRecyclerView;
@@ -59,6 +60,10 @@ public class Cappuccino {
 
     public static ActionSearchView actionSearchView() {
         return new ActionSearchView();
+    }
+
+    public static ActionDrawer actionOpenNavigationView(){
+        return new ActionDrawer();
     }
 
     public static void registerViewPagerIdlingResource(final ViewPager viewPager) {
