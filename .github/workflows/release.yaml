@@ -1,0 +1,29 @@
+name: Pull-Request
+
+on:
+  pull_request:
+    branches:
+      - master
+
+env:
+  GITHUB_TOKEN: ${{ secrets.CI_RELEASE_TOKEN }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:					
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Run CodeBuild
+        uses: aws-actions/aws-codebuild-run-build@master
+        with:
+          project-name: standard
+          buildspec-override: buildspec.yaml
+          image-override: ${{ secrets.AWS_ECR_PROD }}/builder-docker:latest

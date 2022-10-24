@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - /entrypoint.sh
+  build:
+    commands:
+      - ls -la
+      - echo "####### RUN ##########"
